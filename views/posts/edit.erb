@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Page</title>
+  </head>
+  <body>
+    <h1>You have arrived at the Editing Center. Welcome!</h1>
+
+    <textarea name="name" rows="8" cols="120">
+      <%= @post [:title] %>
+      <%= @post [:body] %>
+    </textarea>
+    <button type="button" name="button">Save</button>
+
+
+  </body>
+</html>

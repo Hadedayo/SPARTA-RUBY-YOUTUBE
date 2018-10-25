@@ -1,0 +1,8 @@
+<h1>Welcome to my HomePage</h1>
+<% @posts.each do |posts| %>
+<div>
+  <h2><a href="/<%= posts[:id]%>"><%= posts[:title] %></a></h2>
+  <p><%= posts[:body] %></p>
+  <img src="https://www.bakingmad.com/BakingMad/media/content/Recipes/Cakes/Chocolate-showstopper-cake/1-Anti-gravity-cake-WEB.jpg" alt="Chocolate-cake" width="300" height="300">
+</div>
+<% end %>
