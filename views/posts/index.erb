@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/master.css">
 <h1>Welcome to my HomePage</h1>
-<% @link.each do |posts| %>
+<% @link.each do |posts| %> 
 <div>
   <h2><a href="/<%= posts[:id]%>"><%= posts[:title] %></a></h2>
   <p><%= posts[:body] %></p>
