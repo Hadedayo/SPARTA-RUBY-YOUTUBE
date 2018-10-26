@@ -14,25 +14,34 @@ class PostController < Sinatra::Base
   #  $: identifies a global variable
   $posts = [{
       id: 0,
-      title: "Video 1",
-      body: "This is the body for page 1 (text)."
+      title: "Beyonce",
+      body: "This is the body for page 1 (text).",
+      link: "https://www.youtube.com/watch?v=BB5zLq1zcdo",
+      description: "Lemonade",
     },
     { id: 1,
-      title: "Video 2",
-      body: "This is the body for page 2 (text)."
+      title: "Jessie J",
+      body: "This is the body for page 2 (text).",
+      embed: "j2WWrupMBAE&spfreload=10",
+      description: "Who You are",
     },
     { id: 2,
-      title: "Video 3",
-      body: "This is the body for page 3 (text)."
+      title: "Little Mix",
+      body: "This is the body for page 3 (text).",
+      embed: "Dw8B1q1tKgs",
+      description: "Power"
     },
     { id: 3,
-      title: "Video 4",
-      body: "This is the body for page 4 (text)."
+      title: "JoJo",
+      body: "This is the body for page 4 (text).",
+      embed: "ggWyUEuGcWY",
+      description: "Leave Get Out`"
     },
     { id: 4,
-      title: "Video 5",
-      body: "This is the body for page 5 (text)."
-
+      title: "Jennifer Hudson",
+      body: "This is the body for page 5 (text).",
+      embed: "CSE_S8WXQrI",
+      description: "And I'm telling you I'm not going anywhere"
     }
   ]
 
@@ -51,20 +60,36 @@ class PostController < Sinatra::Base
     end
 
     # dynamic route
-    get "/:id_from_URL" do
-      id = params[:id_from_URL].to_i
-      @post = $posts[id]
-      erb :'posts/show'
+    get "/beyonce" do
+      id = params[:beyonce].to_i
+      @link = $posts[id]
+      erb :'posts/beyonce'
 
     end
 
-    get "/:id_from_URL/edit" do
-      id = params[:id_from_URL].to_i
-      @post = $posts[id]
-      erb :'posts/edit'
+    get "/jessie_j" do
+      id = params[:jessie_j].to_i
+      @link = $posts[id]
+      erb :'posts/jessiej'
     end
 
+    get "/little_mix" do
+      id = params[:little_mix].to_i
+      @link = $posts[id]
+      erb :'posts/littlemix'
+    end
 
+    get "/jojo" do
+      id = params[:jojo].to_i
+      @link = $posts[id]
+      erb :'posts/jojo'
+    end
+
+    get "/jennifer_hudson" do
+      id = params[:jennifer_hudson].to_i
+      @link = $posts[id]
+      erb :'posts/jenniferhudson'
+    end
 
 
 end
