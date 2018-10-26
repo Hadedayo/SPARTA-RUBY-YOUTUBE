@@ -16,7 +16,7 @@ class PostController < Sinatra::Base
       id: 0,
       title: "Beyonce",
       body: "This is the body for page 1 (text).",
-      link: "https://www.youtube.com/watch?v=BB5zLq1zcdo",
+      embed: "BB5zLq1zcdo",
       description: "Lemonade",
     },
     { id: 1,
@@ -46,50 +46,21 @@ class PostController < Sinatra::Base
   ]
 
     #static route
-
     get '/' do
-      "<h1>Hello New Page </h1>"
+      "<h1>Hello Youtube Page </h1>"
         @title_of_page = "Youtube page"
-        @post = $posts
+        @link = $posts
         erb :'posts/index'
     end
 
+    # get '/new' do
+    #   "<h1>Hello New Page </h1>"
+    # end
 
-    get '/new' do
-      "<h1>Hello New Page </h1>"
-    end
-
-    # dynamic route
-    get "/beyonce" do
-      id = params[:beyonce].to_i
+    get "/:artist_name" do
+      id = params[:artist_name].to_i
       @link = $posts[id]
-      erb :'posts/beyonce'
-
+      erb :"posts/show"
     end
-
-    get "/jessie_j" do
-      id = params[:jessie_j].to_i
-      @link = $posts[id]
-      erb :'posts/jessiej'
-    end
-
-    get "/little_mix" do
-      id = params[:little_mix].to_i
-      @link = $posts[id]
-      erb :'posts/littlemix'
-    end
-
-    get "/jojo" do
-      id = params[:jojo].to_i
-      @link = $posts[id]
-      erb :'posts/jojo'
-    end
-
-    get "/jennifer_hudson" do
-      id = params[:jennifer_hudson].to_i
-      @link = $posts[id]
-      erb :'posts/jenniferhudson'
-    end
-
 
 end
