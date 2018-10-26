@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/master.css">
+<h1>Welcome to my HomePage</h1>
+<% @posts.each do |posts| %>
+<div>
+  <h2><a href="/<%= posts[:id]%>"><%= posts[:title] %></a></h2>
+  <p><%= posts[:body] %></p>
+</div>
+<% end %>
+
+<ul>
+  <a href="/">Video 1</a>
+  <a href="#">Video 2</a>
+  <a href="#">Video 3</a>
+  <a href="#">Video 4</a>
+  <a href="#">Video 5</a>
+</ul>
+
+<main>
+  <iframe src="https://www.youtube.com/embed/qB_IvRcr04E" width="700" height="400"></iframe>
+</main>
